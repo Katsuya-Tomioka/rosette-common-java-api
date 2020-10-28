@@ -19,6 +19,7 @@ package com.basistech.util;
 /**
  * This enum names different tag sets for part of speech tags.
  */
+@SuppressWarnings("java:S115")
 public enum PartOfSpeechTagSet {
     /** Basis Technology's fine-granularity part of speech tags. **/
     basis,

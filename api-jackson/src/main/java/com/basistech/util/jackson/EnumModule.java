@@ -36,6 +36,7 @@ public class EnumModule extends SimpleModule {
         super(ModuleVersion.VERSION);
     }
 
+    @Override
     public void setupModule(SetupContext context) {
         super.setupModule(context);
         context.setMixInAnnotations(LanguageCode.class, LanguageCodeMixin.class);

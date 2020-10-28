@@ -19,6 +19,7 @@ package com.basistech.util;
 import com.basistech.rosette.RosetteException;
 import com.basistech.rosette.util.EncodingCode;
 import com.google.common.io.Resources;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.ops4j.pax.exam.Configuration;
@@ -70,6 +71,6 @@ public class OsgiIT {
         new BasisInternalException();
         System.out.println(EncodingCode.Ascii);
         System.out.println(LanguageCode.ENGLISH);
-
+        Assert.assertTrue(true);
     }
 }

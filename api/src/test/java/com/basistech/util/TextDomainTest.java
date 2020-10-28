@@ -19,7 +19,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
@@ -58,14 +57,14 @@ public class TextDomainTest {
         TextDomain tdArabicByHand = new TextDomain(ISO15924.Arab, LanguageCode.ARABIC,
                                                    TransliterationScheme.UNKNOWN);
         TextDomain tdArabicNative = new TextDomain(LanguageCode.ARABIC);
-        assertTrue(tdArabicByHand.equals(tdArabicNative));
+        assertEquals(tdArabicByHand, tdArabicNative);
 
     }
 
     @Test
     public void testhashCode() {
-        assertTrue(td1.hashCode() == td2.hashCode());
-        assertTrue(td2.hashCode() == td3.hashCode());
+        assertEquals(td1.hashCode(), td2.hashCode());
+        assertEquals(td2.hashCode(), td3.hashCode());
         assertNotEquals(td1.hashCode(), tdDefault.hashCode());
     }
 
@@ -75,14 +74,14 @@ public class TextDomainTest {
         // we're debugging:
         TextDomain prs = new TextDomain(LanguageCode.DARI);
         TextDomain pes = new TextDomain(LanguageCode.WESTERN_FARSI);
-        assertFalse(prs.toString().equals(pes.toString()));
+        assertNotEquals(prs.toString(), pes.toString());
         // test that we don't crash on some null cases.
         TextDomain ntd = new TextDomain(null, null, null);
         // some silly asserts to try to shut up intelliJ.
         assertNotNull(ntd.toString());
-        assertNotNull(ntd.hashCode());
+        assertNotEquals(0, ntd.hashCode());
         assertEquals(ntd, ntd);
-        assertNotNull(ntd.equals(prs));
-        assertNotNull(pes.equals(ntd));
+        assertNotEquals(ntd, prs);
+        assertNotEquals(pes, ntd);
     }
 }

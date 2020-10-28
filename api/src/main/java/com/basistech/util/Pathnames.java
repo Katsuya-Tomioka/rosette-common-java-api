@@ -31,6 +31,7 @@ public class Pathnames {
      * Default constructor.
      */
     public Pathnames() {
+        //
     }
 
     /**
@@ -75,7 +76,7 @@ public class Pathnames {
             String dir = getLibraryParentDir();
             File[] platformDirs = new File(dir).listFiles(new FileFilter() {
                 public boolean accept(File f) {
-                    return f.isDirectory() & !f.isHidden();
+                    return f.isDirectory() && !f.isHidden();
                 }
             });
             if (platformDirs == null || platformDirs.length == 0) {

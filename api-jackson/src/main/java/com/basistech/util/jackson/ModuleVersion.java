@@ -36,7 +36,7 @@ final class ModuleVersion {
             String snapshot = "";
             if (verString.endsWith("-SNAPSHOT")) {
                 snapshot = "-SNAPSHOT";
-                verString = verString.substring(0, verString.length() - "-SNAPSHOT".length());
+                verString = verString.substring(0, verString.length() - snapshot.length());
             }
             String[] bits = verString.split("\\.");
             version = new Version(Integer.parseInt(bits[0]),

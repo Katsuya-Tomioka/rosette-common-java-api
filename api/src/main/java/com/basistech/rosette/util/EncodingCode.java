@@ -23,6 +23,7 @@ package com.basistech.rosette.util;
 /**
  * This is a list of many encoding names in mime name alphabetical order.
  */
+@SuppressWarnings({"java:S115", "java:S1192"})
 public enum EncodingCode {
 
     Big5("Big5", "Big5", "Ascii"),
